@@ -1,0 +1,660 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sc-cos-1258290809.cos.ap-guangzhou.myqcloud.com/oj/lab-logo-128.png">
+  <link rel="icon" href="https://sc-cos-1258290809.cos.ap-guangzhou.myqcloud.com/oj/lab-logo-128.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="这是blog.swu-acm.cn的发文指引，仅供西南大学ACM实验室内部成员使用">
+  <meta name="author" content="SunistC">
+  <meta name="keywords" content="Computer Science">
+  
+  <title>写作指导 - SWU-ACM Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2720498_axucgydimuf.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.swu-acm.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Blog of Swu-Acm-Lab</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="写作指导">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      SunistC
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-08-04 10:01" pubdate>
+        2021年8月4日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">写作指导</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>这是blog.swu-acm.cn的发文指引，仅供西南大学ACM实验室内部成员使用</p>
+<span id="more"></span>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>这是托管于GitHub Page的一个静态博客站点，使用Hexo驱动，Fluid主题美化，在撰写文章之前，需要进行以下准备工作：</p>
+<ol>
+<li>在本机安装node环境和相关依赖</li>
+<li>fork本站点并在本地部署</li>
+</ol>
+<p>然后在发文时需要进行以下步骤：</p>
+<ol>
+<li>检查仓库版本</li>
+<li>撰写文章并commit</li>
+<li>发起pull request</li>
+<li>等待合并</li>
+</ol>
+<h2 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h2><h3 id="在本机安装node环境"><a href="#在本机安装node环境" class="headerlink" title="在本机安装node环境"></a>在本机安装<code>node</code>环境</h3><p>建议使用<code>nvm</code>对<code>node</code>环境进行管理，ACM实验室的镜像站镜像了一份<code>nvm</code>仓库。</p>
+<blockquote>
+<p><code>nvm</code> : Node Version Manager，是控制node版本的一个工具包</p>
+</blockquote>
+<ol>
+<li><p>(仅支持Linux/Unix/macOS<sup><a href="#fn_1" id="reffn_1">1</a></sup>)执行下面的安装语句<sup><a href="#fn_2" id="reffn_2">2</a></sup>：</p>
+<p> <strong><em>Curl</em></strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">curl -o- https://gitea.swu-acm.cn/mirrors/nvm/raw/branch/master/install.sh | bash<br></code></pre></div></td></tr></table></figure>
+<p> <strong><em>Wget</em></strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget -q0- https://gitea.swu-acm.cn/mirrors/nvm/raw/branch/master/install.sh | bash<br></code></pre></div></td></tr></table></figure>
+<p> 执行完成后，<code>nvm</code>就被安装在<code>~/.nvm</code>文件夹内了，需要将其添加到环境变量中，在<code>~/.bashrc</code>，<code>~/.zshrc</code>，<code>~/.profile</code>中任意一个文件添加如下内容<sup><a href="#fn_3" id="reffn_3">3</a></sup>：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">export NVM_DIR=&quot;$([ -z &quot;$&#123;XDG_CONFIG_HOME-&#125;&quot; ] &amp;&amp; printf %s &quot;$&#123;HOME&#125;/.nvm&quot; || printf %s &quot;$&#123;XDG_CONFIG_HOME&#125;/nvm&quot;)&quot;<br>[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>使用<code>nvm</code>安装<code>node</code>：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">nvm install $version<br></code></pre></div></td></tr></table></figure>
+<p> <code>$version</code>是你要安装的<code>node</code>版本</p>
+</li>
+<li><p>使用<code>nvm</code>激活<code>node</code>环境</p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">nvm use $version<br></code></pre></div></td></tr></table></figure>
+<p> <code>$version</code>是你要使用的<code>node</code>版本</p>
+</li>
+</ol>
+<p>现在就大功告成啦</p>
+<h3 id="在本地部署Hexo站点"><a href="#在本地部署Hexo站点" class="headerlink" title="在本地部署Hexo站点"></a>在本地部署Hexo站点</h3><ol>
+<li><p>首先从<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a><sup><a href="#fn_4" id="reffn_4">4</a></sup>仓库中fork到你个人的仓库，下面你个人的仓库地址将使用<code>$repo</code>来表示：</p>
+<p> <strong><em>添加<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a>仓库为<code>upstream</code></em></strong></p>
+<p> 在<code>$repo</code>目录下执行下面的命令：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git remote add upstream https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog<br></code></pre></div></td></tr></table></figure>
+<p> 这样你将可以同步<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a>仓库的更改。</p>
+</li>
+<li><p>然后安装必须的依赖：</p>
+<p> 在<code>$repo</code>目录下执行下面的命令：</p>
+<p> <strong><em>hexo-cli</em></strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">npm install hexo-cli --save<br></code></pre></div></td></tr></table></figure>
+<p> <strong><em>Fluid主题</em></strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">npm install hexo-theme-fluid --save<br></code></pre></div></td></tr></table></figure>
+<p> <strong><em>其余依赖</em></strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yarn<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>然后跑起来：</p>
+<p> 在<code>$repo</code>目录下执行下面的命令：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">hexo server<br></code></pre></div></td></tr></table></figure>
+<p> 本地站点会在<a target="_blank" rel="noopener" href="http://localhost:4000">localhost:4000</a>进行服务，可以在浏览器访问看一下效果。</p>
+</li>
+</ol>
+<h2 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h2><p>为了保证理解正确，建议阅读文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/SirM2z/article/details/50421800">GitHub从fork到pull request之基础流程</a>。</p>
+<h3 id="检查远程仓库版本"><a href="#检查远程仓库版本" class="headerlink" title="检查远程仓库版本"></a>检查远程仓库版本</h3><p>在<code>$repo</code>目录下执行下面的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git fetch --dry-run # 检查原仓库是否有变化<br>git pull # 将原仓库的更改与本地同步<br></code></pre></div></td></tr></table></figure>
+<h3 id="撰写文章"><a href="#撰写文章" class="headerlink" title="撰写文章"></a>撰写文章</h3><ol>
+<li><p>生成文章</p>
+<p> 在<code>$repo</code>目录下执行下面的命令：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">hexo new post $postname<br></code></pre></div></td></tr></table></figure>
+<p> <strong>注意</strong> <code>$postname</code>将作为文章的URL，请不要使用中文和其他特殊字符！</p>
+<p> <code>$postname</code>是你文章的标题，执行完后会在<code>$repo/source/_posts</code>目录下生成一个<code>$postname.md</code>的文件。</p>
+</li>
+<li><p>使用你喜欢的编辑器撰写一篇markdown文章</p>
+<p> 使用一个你喜欢的markdown编辑器打开上一步生成的<code>$repo/source/_posts/$postname.md</code>，按照正常的文章编辑即可，需要注意的只有以下几点：</p>
+<ol>
+<li><p>文章属性字段</p>
+<p> 在文章一开头有形如这样的一段代码：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">---<br>title: $postname<br>date: $createtime<br>---<br></code></pre></div></td></tr></table></figure>
+<p> 你可以在其中加入如下字段：</p>
+<p> <code>title</code>: 文章的标题，建议更改</p>
+<p> <code>author</code>: 文章的作者</p>
+<p> <code>date</code>: 文章的修改日期(会自动更改)</p>
+<p> <code>tags</code>: 文章的标签，可以多个</p>
+<p> <code>banner_img</code>: 文章的背景图片，仅支持外链</p>
+<p> <code>category</code>: 文章的分类</p>
+<p> 示例如下：</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">---<br>title: 数据结构算法<br>date: 2021-08-04 09:27:54<br>author: Vector<br>tags:<br><span class="hljs-code">    [</span><br><span class="hljs-code">        C++,</span><br><span class="hljs-code">        Datastructures,</span><br><span class="hljs-code">        Algorithm,</span><br><span class="hljs-code">        STL</span><br><span class="hljs-code">    ]</span><br><span class="hljs-code">category: Courses</span><br><span class="hljs-code">---</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>文章摘要</p>
+<p> 在上面那一段文章属性结束后，可以自己定义文章摘要，如下所示：</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">$abstract<br><br>&lt;!--more--&gt;<br></code></pre></div></td></tr></table></figure>
+<p> 在<code>&lt;!--more--&gt;</code>标签以前的都是摘要，如果没有写摘要的话系统就会自动节选文章的前一百个字作为文章的摘要。</p>
+</li>
+<li><p>公式与图形</p>
+<p> 我们适配了mermaid作为图表驱动引擎，可以在文章中使用mermaid：</p>
+ <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">graph LR;<br>A--&gt;B;<br>A--&gt;C; <br>B--&gt;D;<br>C--&gt;D;<br></code></pre></div></td></tr></table></figure>
+<p> 效果：</p>
+ <pre><code class=" mermaid">graph LR;
+A--&gt;B;
+A--&gt;C; 
+B--&gt;D;
+C--&gt;D;
+</code></pre>
+<p> 我们还适配了mathjax作为公式驱动引擎，可以在文章中使用公式：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs latex">$$<br>\begin&#123;aligned&#125;<br>\left| \bigcup_&#123;i=1&#125;^&#123;n&#125; S_i \right| &amp;= \sum_&#123;i&#125; | S_i | - \sum_&#123;i&lt;j&#125; | S_i \cap S_j | + \sum_&#123;i&lt;j&lt;k&#125; |S_i \cap S_j \cap S_k | - \cdots \\ <br>&amp; \quad + (-1)^&#123;m-1&#125; \sum_&#123;a_i&lt;a_&#123;i+1&#125; &#125; \left| \bigcap_&#123;i=1&#125;^&#123;m&#125; S_&#123;a_i&#125; \right| + \cdots + (-1)^&#123;n-1&#125; \left| S_1 \cap \cdots \cap S_n \right|<br>\end&#123;aligned&#125;<br>$$<br></code></pre></div></td></tr></table></figure>
+<p> 效果：</p>
+<script type="math/tex; mode=display">
+ \begin{aligned}
+ \left| \bigcup_{i=1}^{n} S_i \right| &= \sum_{i} | S_i | - \sum_{i<j} | S_i \cap S_j | + \sum_{i<j<k} |S_i \cap S_j \cap S_k | - \cdots \\ 
+ & \quad + (-1)^{m-1} \sum_{a_i<a_{i+1} } \left| \bigcap_{i=1}^{m} S_{a_i} \right| + \cdots + (-1)^{n-1} \left| S_1 \cap \cdots \cap S_n \right|
+ \end{aligned}</script></li>
+</ol>
+</li>
+</ol>
+<h3 id="发起pull-request"><a href="#发起pull-request" class="headerlink" title="发起pull request"></a>发起pull request</h3><p>在<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a>页面提交pull request，按实际情况填写字段即可。</p>
+<h3 id="等待合并"><a href="#等待合并" class="headerlink" title="等待合并"></a>等待合并</h3><p>如果审核通过的话，你的文章就会在博客站内发布了。</p>
+<h2 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h2><p>你可以通过如下方式提交你的问题：</p>
+<ol>
+<li>在下方评论区留下你的问题</li>
+<li>【推荐】在<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a>提交Issue</li>
+</ol>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p><sup><a href="#fn_1" id="reffn_1">1</a></sup> Windows请直接到<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases"><code>nvm-windows</code>仓库</a>下载安装包。<br><sup><a href="#fn_2" id="reffn_2">2</a></sup> 由于版本可能发生更迭，建议前往<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/mirrors/nvm">mirrors/nvm</a>查看最新的安装语句。<br><sup><a href="#fn_3" id="reffn_3">3</a></sup> 如果你使用的是bash，请在bashrc中添加，如果你使用的是zsh，请在zshrc中添加，其他shell请按照实际情况添加。<br><sup><a href="#fn_4" id="reffn_4">4</a></sup> 只有ACM实验室的注册成员且被分配了权限，才能访问该仓库。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/04/Datastructures-Algorithm/">
+                        <span class="hidden-mobile">数据结构算法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"Ru1edutq5JbFc8uUYOqE9TIG-gzGzoHsz","appKey":"KCKGmFcStA3gCXHYVwGprLs3","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":true,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     Copyright (C) Southwest University ACM Laboratory, 2019-2021 </br> 西南大学ACM实验室版权所有 </br> <!--a href="https://gitee.com/SWU-ACM-Lab"><i class="iconfont icon-gitee-fill"></i></a--> <a target="_blank" rel="noopener" href="https://github.com/SWU-ACM-Lab"><i class="iconfont icon-github-fill"></i></a>    <a target="_blank" rel="noopener" href="https://space.bilibili.com/1599858052"><i class="iconfont icon-bilibili-fill"></i></a> <a href="https://blog.swu-acm.cn"><i class="iconfont icon-hexo"></i></a> <a target="_blank" rel="noopener" href="http://n4j-s.swu-acm.cn"><i class="iconfont icon-neoj"></i></a> <a target="_blank" rel="noopener" href="https://auth.swu-acm.cn"><i class="iconfont icon-icon_authority"></i></a> <a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab"><i class="iconfont icon-gitea"></i></a> <a target="_blank" rel="noopener" href="https://mail.swu-acm.cn"><i class="iconfont icon-outlook"></i></a> </br> <a target="_blank" rel="noopener" href="https://www.swu-acm.cn">前往主站</a> | <a target="_blank" rel="noopener" href="https://oj.swu-acm.cn">测评平台</a> | <a target="_blank" rel="noopener" href="https://files.swu-acm.cn">在线网盘</a> | <a target="_blank" rel="noopener" href="https://mirrors.swu-acm.cn">开源镜像</a> | <a target="_blank" rel="noopener" href="https://swu-acm.jetbrains.space">协作空间</a> </br> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/static/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
