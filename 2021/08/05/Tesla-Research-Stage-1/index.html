@@ -17,10 +17,10 @@
   
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
-  <meta name="author" content="Southwest University ACM Laboratory">
+  <meta name="author" content="SunistC">
   <meta name="keywords" content="Computer Science">
   
-  <title>Hello World - SWU-ACM Blog</title>
+  <title>自动驾驶技术路线探究 - 第一阶段报告 - SWU-ACM Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -169,7 +169,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="自动驾驶技术路线探究 - 第一阶段报告">
               
             </span>
 
@@ -178,14 +178,14 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-author" aria-hidden="true"></i>
-      Southwest University ACM Laboratory
+      SunistC
     </span>
   
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-30 09:36" pubdate>
-        2021年7月30日 上午
+      <time datetime="2021-08-05 09:40" pubdate>
+        2021年8月5日 上午
       </time>
     </span>
   
@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9 字
+      748 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      8
        分钟
     </span>
   
@@ -244,22 +244,80 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">自动驾驶技术路线探究 - 第一阶段报告</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 天前
+                  本文最后更新于：18 小时前
                 
               </p>
             
             <div class="markdown-body">
-              <p>Here is the blog website of swu-acm-lab</p>
+              <blockquote>
+<p>本文为隐藏文章，无法检索、没有外链</p>
+</blockquote>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><h3 id="1-Huawei-Mode"><a href="#1-Huawei-Mode" class="headerlink" title="1. Huawei Mode"></a>1. Huawei Mode</h3><p>华为模式指的是以平台-车辆一体的以综合感知为核心的自动驾驶发展路线。</p>
+<h3 id="2-Tesla-Mode"><a href="#2-Tesla-Mode" class="headerlink" title="2. Tesla Mode"></a>2. Tesla Mode</h3><p>特斯拉模式指的是以单车辆的个体感知为核心的自动驾驶发展路线。</p>
+<h3 id="3-Technologies"><a href="#3-Technologies" class="headerlink" title="3. Technologies"></a>3. Technologies</h3><ul>
+<li><p>机器学习</p>
+<p>机器学习主要由两个步骤组成<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="Oh C, Yoon J. Hardware acceleration technology for deep-learning in autonomous vehicles[C]//2019 IEEE International Conference on Big Data and Smart Computing (BigComp). IEEE, 2019: 1-3.
+">[1]</span></a></sup>：前期的模型训练和后期的模型应用。前期的模型训练为大规模算力投入的，投入巨量训练数据的，消耗时间较长的高成本投入阶段，在算力特别高的数据中心进行；后期的模型应用则是将前期训练好的模型用来直接计算，得出结果，此过程对算力要求较低，时间开销较低，在车载终端直接运行。</p>
+</li>
+<li><p>计算机视觉</p>
+<p>计算机视觉和机器学习强相关，在自动驾驶领域，基本上所有的计算机视觉处理都是经过机器学习而来的，在自动驾驶领域一般使用<code>CNN</code>(卷积神经网络)处理相机等视觉捕获设备产生的图形，其结构如下<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Welling E and Oppelt M. Convolutional neural networks in autonomous vehicle control systems, 2017
+">[2]</span></a></sup>。</p>
+<div align="center"><img src="https://z3.ax1x.com/2021/08/05/fVxIhT.png" srcset="/img/loading.gif" lazyload/>Figure-1: CNN的基本结构</div>
 
+<ul>
+<li>Input</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Architectures"><a href="#4-Architectures" class="headerlink" title="4. Architectures"></a>4. Architectures</h3><p>自动驾驶汽车的感知系统一般由<code>相机</code>，<code>激光雷达</code>，<code>声波雷达</code>，<code>定位设备</code>等四类设备<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="Zhou Z, Akhtar Z, Man K L, et al. A deep learning platooning-based video information-sharing Internet of Things framework for autonomous driving systems[J]. International Journal of Distributed Sensor Networks, 2019, 15(11): 1550147719883133.
+">[3]</span></a></sup>组成。</p>
+<div align="center"><img src="https://z3.ax1x.com/2021/08/05/fVWGA1.png" srcset="/img/loading.gif" lazyload/>Figure-1: 自动驾驶汽车的结构</div>
+
+<p>其中的常见设备感知范围与视野资料如下<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="Zhou Z, Akhtar Z, Man K L, et al. A deep learning platooning-based video information-sharing Internet of Things framework for autonomous driving systems[J]. International Journal of Distributed Sensor Networks, 2019, 15(11): 1550147719883133.
+">[3]</span></a></sup>：</p>
+<div align="center"><img src="https://z3.ax1x.com/2021/08/05/fVju34.png" srcset="/img/loading.gif" lazyload/>Figure-2: 常见感知设备感知参数</div>
+
+<p> 其感知距离多在$5 \sim 100$米，感知视野多在$90^\circ \sim 120^\circ$。</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p><strong>在技术发展初期，华为模式占优；在技术发展中期，特斯拉模式占优；在技术发展后期，华为模式占优</strong></p>
+<blockquote>
+<p>需要注意的是，技术发展中期可能持续时间较短，而技术发展初期的持续时间则相对较长。</p>
+</blockquote>
+<h2 id="Tesla-Mode"><a href="#Tesla-Mode" class="headerlink" title="Tesla Mode"></a>Tesla Mode</h2><p>特斯拉使用机器视觉方式，实现单车自动驾驶。</p>
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><h3 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages"></a>Advantages</h3><h3 id="Disadvantages"><a href="#Disadvantages" class="headerlink" title="Disadvantages"></a>Disadvantages</h3><h2 id="Huawei-Mode"><a href="#Huawei-Mode" class="headerlink" title="Huawei Mode"></a>Huawei Mode</h2><p>华为使用车辆与平台结合、多车之间互相组网的方式，实现协同自动驾驶。</p>
+<h3 id="Features-1"><a href="#Features-1" class="headerlink" title="Features"></a>Features</h3><h3 id="Advantages-1"><a href="#Advantages-1" class="headerlink" title="Advantages"></a>Advantages</h3><h3 id="Disadvantages-1"><a href="#Disadvantages-1" class="headerlink" title="Disadvantages"></a>Disadvantages</h3><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>Oh C, Yoon J. Hardware acceleration technology for deep-learning in autonomous vehicles[C]//2019 IEEE International Conference on Big Data and Smart Computing (BigComp). IEEE, 2019: 1-3.
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>Welling E and Oppelt M. Convolutional neural networks in autonomous vehicle control systems, 2017
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>Zhou Z, Akhtar Z, Man K L, et al. A deep learning platooning-based video information-sharing Internet of Things framework for autonomous driving systems[J]. International Journal of Distributed Sensor Networks, 2019, 15(11): 1550147719883133.
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>尉志青, 马昊, 张奇勋, 等. 感知-通信-计算融合的智能车联网挑战与趋势[J]. 中兴通讯技术, 2020, 1.
+<a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:5" class="footnote-text"><span>王科俊, 赵彦东, 邢向磊. 深度学习在无人驾驶汽车领域应用的研究进展[J]. 智能系统学报, 2018, 13(1): 55-69.
+<a href="#fnref:5" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:6" class="footnote-text"><span>小马智行PonyAI. 1小时实录：广州高峰期1小时全自动驾驶，无人类干预[Z]. 哔哩哔哩弹幕网, 2021, 3.
+<a href="#fnref:6" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Report/">Report</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/IoT/">IoT</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Autonomous-Vehicle/">Autonomous Vehicle</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Autonomous-Driving/">Autonomous Driving</a>
+                    
+                  </div>
                 
               </div>
               

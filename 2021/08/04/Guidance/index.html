@@ -62,7 +62,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"blog.swu-acm.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"blog.swu-acm.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"always","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -248,7 +248,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：5 小时前
+                  本文最后更新于：1 天前
                 
               </p>
             
@@ -272,12 +272,15 @@
 <p><code>nvm</code> : Node Version Manager，是控制node版本的一个工具包</p>
 </blockquote>
 <ol>
-<li><p>(仅支持Linux/Unix/macOS<sup><a href="#fn_1" id="reffn_1">1</a></sup>)执行下面的安装语句<sup><a href="#fn_2" id="reffn_2">2</a></sup>：</p>
+<li><p>(仅支持Linux/Unix/macOS<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="Windows请直接到nvm-windows仓库下载安装包。
+">[1]</span></a></sup>)执行下面的安装语句<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="由于版本可能发生更迭，建议前往mirrors/nvm查看最新的安装语句。
+">[2]</span></a></sup>：</p>
 <p> <strong><em>Curl</em></strong></p>
  <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">curl -o- https://gitea.swu-acm.cn/mirrors/nvm/raw/branch/master/install.sh | bash<br></code></pre></div></td></tr></table></figure>
 <p> <strong><em>Wget</em></strong></p>
  <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget -q0- https://gitea.swu-acm.cn/mirrors/nvm/raw/branch/master/install.sh | bash<br></code></pre></div></td></tr></table></figure>
-<p> 执行完成后，<code>nvm</code>就被安装在<code>~/.nvm</code>文件夹内了，需要将其添加到环境变量中，在<code>~/.bashrc</code>，<code>~/.zshrc</code>，<code>~/.profile</code>中任意一个文件添加如下内容<sup><a href="#fn_3" id="reffn_3">3</a></sup>：</p>
+<p> 执行完成后，<code>nvm</code>就被安装在<code>~/.nvm</code>文件夹内了，需要将其添加到环境变量中，在<code>~/.bashrc</code>，<code>~/.zshrc</code>，<code>~/.profile</code>中任意一个文件添加如下内容<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="如果你使用的是bash，请在bashrc中添加，如果你使用的是zsh，请在zshrc中添加，其他shell请按照实际情况添加。
+">[3]</span></a></sup>：</p>
  <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">export NVM_DIR=&quot;$([ -z &quot;$&#123;XDG_CONFIG_HOME-&#125;&quot; ] &amp;&amp; printf %s &quot;$&#123;HOME&#125;/.nvm&quot; || printf %s &quot;$&#123;XDG_CONFIG_HOME&#125;/nvm&quot;)&quot;<br>[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm<br></code></pre></div></td></tr></table></figure>
 </li>
 <li><p>使用<code>nvm</code>安装<code>node</code>：</p>
@@ -291,7 +294,8 @@
 </ol>
 <p>现在就大功告成啦</p>
 <h3 id="在本地部署Hexo站点"><a href="#在本地部署Hexo站点" class="headerlink" title="在本地部署Hexo站点"></a>在本地部署Hexo站点</h3><ol>
-<li><p>首先从<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a><sup><a href="#fn_4" id="reffn_4">4</a></sup>仓库中fork到你个人的仓库，下面你个人的仓库地址将使用<code>$repo</code>来表示：</p>
+<li><p>首先从<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a><sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="只有ACM实验室的注册成员且被分配了权限，才能访问该仓库。
+">[4]</span></a></sup>仓库中fork到你个人的仓库，下面你个人的仓库地址将使用<code>$repo</code>来表示：</p>
 <p> <strong><em>添加<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a>仓库为<code>upstream</code></em></strong></p>
 <p> 在<code>$repo</code>目录下执行下面的命令：</p>
  <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git remote add upstream https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog<br></code></pre></div></td></tr></table></figure>
@@ -371,8 +375,11 @@ C--&gt;D;
 <li>在下方评论区留下你的问题</li>
 <li>【推荐】在<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/SWU-ACM-Lab/original-swu-blog">original-swu-blog</a>提交Issue</li>
 </ol>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p><sup><a href="#fn_1" id="reffn_1">1</a></sup> Windows请直接到<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases"><code>nvm-windows</code>仓库</a>下载安装包。<br><sup><a href="#fn_2" id="reffn_2">2</a></sup> 由于版本可能发生更迭，建议前往<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/mirrors/nvm">mirrors/nvm</a>查看最新的安装语句。<br><sup><a href="#fn_3" id="reffn_3">3</a></sup> 如果你使用的是bash，请在bashrc中添加，如果你使用的是zsh，请在zshrc中添加，其他shell请按照实际情况添加。<br><sup><a href="#fn_4" id="reffn_4">4</a></sup> 只有ACM实验室的注册成员且被分配了权限，才能访问该仓库。</p>
-
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>Windows请直接到<a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases"><code>nvm-windows</code>仓库</a>下载安装包。
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>由于版本可能发生更迭，建议前往<a target="_blank" rel="noopener" href="https://gitea.swu-acm.cn/mirrors/nvm">mirrors/nvm</a>查看最新的安装语句。
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>如果你使用的是bash，请在bashrc中添加，如果你使用的是zsh，请在zshrc中添加，其他shell请按照实际情况添加。
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>只有ACM实验室的注册成员且被分配了权限，才能访问该仓库。
+<a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
