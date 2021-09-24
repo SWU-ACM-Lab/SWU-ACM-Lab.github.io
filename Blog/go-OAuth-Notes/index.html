@@ -16,11 +16,11 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
-  <meta name="author" content="Southwest University ACM Laboratory">
+  <meta name="description" content="OAuth2.0在各种认证场景都有广泛的应用，本文从OAuth2.0的原理出发，使用Golang编程语言进行实践，开发一个OAuth2.0-Authentication-Server。">
+  <meta name="author" content="SunistC">
   <meta name="keywords" content="Computer Science">
   
-  <title>Hello World - SWU-ACM Blog</title>
+  <title>Go语言OAuth2.0实战笔记 - SWU-ACM Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -169,7 +169,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="Go语言OAuth2.0实战笔记">
               
             </span>
 
@@ -178,14 +178,14 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-author" aria-hidden="true"></i>
-      Southwest University ACM Laboratory
+      SunistC
     </span>
   
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-30 09:36" pubdate>
-        2021年7月30日 上午
+      <time datetime="2021-09-18 14:41" pubdate>
+        2021年9月18日 下午
       </time>
     </span>
   
@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9 字
+      277 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -244,22 +244,57 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Go语言OAuth2.0实战笔记</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 个月前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <p>Here is the blog website of swu-acm-lab</p>
-
+              <p>OAuth2.0在各种认证场景都有广泛的应用，本文从OAuth2.0的原理出发，使用Golang编程语言进行实践，开发一个OAuth2.0-Authentication-Server。</p>
+<span id="more"></span>
+<blockquote>
+<p>本文在视频《教你构建OAuth2.0和SSO单点登录服务(基于go-oauth2)》<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="老J在B站. 教你构建OAuth2.0和SSO单点登录服务(基于go-oauth2)[Online]. 哔哩哔哩弹幕网, 2020, 6. Available: https://www.bilibili.com/video/BV1UA411v73P
+">[1]</span></a></sup>的启发下撰写</p>
+</blockquote>
+<h1 id="OAuth2-0的认知"><a href="#OAuth2-0的认知" class="headerlink" title="OAuth2.0的认知"></a>OAuth2.0的认知</h1><h2 id="什么是OAuth2-0"><a href="#什么是OAuth2-0" class="headerlink" title="什么是OAuth2.0"></a>什么是OAuth2.0</h2><h2 id="OAuth2-0的工作原理"><a href="#OAuth2-0的工作原理" class="headerlink" title="OAuth2.0的工作原理"></a>OAuth2.0的工作原理</h2><p>根据Golang OAuth2.0 Server项目<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="go-oauth2. go-oauth2/oauth2[Online]. github.com, 2021, 9. Available: https://github.com/go-oauth2/oauth2
+">[2]</span></a></sup>的描述，OAuth2.0的工作流程图如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">+--------+                               +---------------+<br>|        |--(A)- Authorization Request -&gt;|   Resource    |<br>|        |                               |     Owner     |<br>|        |&lt;-(B)-- Authorization Grant ---|               |<br>|        |                               +---------------+<br>|        |<br>|        |                               +---------------+<br>|        |--(C)-- Authorization Grant --&gt;| Authorization |<br>| Client |                               |     Server    |<br>|        |&lt;-(D)----- Access Token -------|               |<br>|        |                               +---------------+<br>|        |<br>|        |                               +---------------+<br>|        |--(E)----- Access Token ------&gt;|    Resource   |<br>|        |                               |     Server    |<br>|        |&lt;-(F)--- Protected Resource ---|               |<br>+--------+                               +---------------+<br></code></pre></div></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li>(A) 客户端请求资源</li>
+<li>(B) 服务端返回请求码</li>
+<li>(C) 客户端使用返回的请求码申请Token</li>
+<li>(D) 服务端验证后返回Token</li>
+<li>(E) 客户端以Token请求资源</li>
+<li>(F) 服务端验证Token后授予资源</li>
+</ul>
+<h1 id="OAuth2-0的工作方式"><a href="#OAuth2-0的工作方式" class="headerlink" title="OAuth2.0的工作方式"></a>OAuth2.0的工作方式</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h1 id="引用与参考"><a href="#引用与参考" class="headerlink" title="引用与参考"></a>引用与参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>老J在B站. 教你构建OAuth2.0和SSO单点登录服务(基于go-oauth2)[Online]. 哔哩哔哩弹幕网, 2020, 6. Available: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UA411v73P">https://www.bilibili.com/video/BV1UA411v73P</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>go-oauth2. go-oauth2/oauth2[Online]. github.com, 2021, 9. Available: <a target="_blank" rel="noopener" href="https://github.com/go-oauth2/oauth2">https://github.com/go-oauth2/oauth2</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Blog/">Blog</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Golang/">Golang</a>
+                    
+                      <a class="hover-with-bg" href="/tags/OAuth2-0/">OAuth2.0</a>
+                    
+                  </div>
                 
               </div>
               
